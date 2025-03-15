@@ -51,7 +51,7 @@ const LinkupLandingPage: React.FC = () => {
   const slideInRight = (id: string) => (isVisible[id] ? 'animate-in fade-in-0 slide-in-from-right-10 duration-700' : 'opacity-0 translate-x-10');
 
   return (
-    <div className="min-h-screen bg-gray-200 flex flex-col">
+    <div className="min-h-screen bg-gray-200 flex flex-col overflow-x-hidden">
       {/* Navbar */}
       <nav className="bg-white py-4 px-6 flex justify-between items-center">
         <div className="flex items-center">
