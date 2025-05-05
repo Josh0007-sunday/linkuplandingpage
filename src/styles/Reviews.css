@@ -1,0 +1,522 @@
+.reviews {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top left Solana logo */
+.reviews::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 350px;
+  height: 350px;
+  background-image: url('../assets/solanaLogo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
+  transform: rotate(-10deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Center top Solana logo (above Grow Together) */
+.reviews::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(99, 159, 171, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(149, 180, 106, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(227, 181, 5, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Additional Solana logos */
+.reviews-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translate(0, -50%) rotate(5deg);
+  width: 200px;
+  height: 200px;
+  background-image: url('../assets/solanaLogo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reviews-container::after {
+  content: '';
+  position: absolute;
+  bottom: -250px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background-image: url('../assets/movement.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.3;
+  transform: rotate(-5deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reviews-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.reviews h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.reviews h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(79, 70, 229, 0) 0%,
+    rgba(79, 70, 229, 0.5) 50%,
+    rgba(79, 70, 229, 0) 100%
+  );
+}
+
+.flowchart {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.flow-start {
+  flex: 0 0 auto;
+  margin-right: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.flow-start::after {
+  content: '';
+  position: absolute;
+  right: -4rem;
+  top: 50%;
+  width: 4rem;
+  height: 2px;
+  background: linear-gradient(to right, 
+    transparent 0%,
+    rgba(79, 70, 229, 0.4) 50%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  animation: horizontalFlow 3s infinite linear;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+}
+
+.flow-paths {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flow-branch {
+  display: flex;
+  gap: 2.5rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.flow-end {
+  flex: 0 0 auto;
+  margin-left: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.flow-end::before {
+  content: '';
+  position: absolute;
+  left: -4rem;
+  top: 50%;
+  width: 4rem;
+  height: 2px;
+  background: linear-gradient(to right, 
+    transparent 0%,
+    rgba(79, 70, 229, 0.4) 50%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  animation: horizontalFlow 3s infinite linear;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+}
+
+.flow-node {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.2rem;
+  border-radius: 12px;
+  width: 140px;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 4px 20px rgba(79, 70, 229, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  z-index: 4;
+}
+
+/* Animated border effect */
+.flow-node::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, 
+    rgba(79, 70, 229, 0.3),
+    rgba(6, 182, 212, 0.3),
+    rgba(59, 130, 246, 0.3)
+  );
+  mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 1.5px;
+  animation: borderFlow 3s linear infinite;
+  opacity: 0.8;
+}
+
+.flow-node::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  background: inherit;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Connecting lines with animated light */
+.flow-branch::before {
+  content: '';
+  position: absolute;
+  left: -1.25rem;
+  right: -1.25rem;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(to right, 
+    transparent 0%,
+    rgba(79, 70, 229, 0.4) 50%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  animation: horizontalFlow 3s infinite linear;
+  background-size: 200% 100%;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+}
+
+.node-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  display: block;
+  text-align: center;
+  filter: drop-shadow(0 2px 4px rgba(79, 70, 229, 0.2));
+}
+
+.flow-node h3 {
+  font-size: 0.9rem;
+  color: #2d3748;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.flow-node p {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.flow-node.reward::before {
+  background: linear-gradient(90deg, 
+    rgba(245, 158, 11, 0.3),
+    rgba(249, 115, 22, 0.3),
+    rgba(244, 63, 94, 0.3)
+  );
+  background-size: 200% 100%;
+}
+
+.flow-node.success::before {
+  background: linear-gradient(90deg, 
+    rgba(16, 185, 129, 0.3),
+    rgba(5, 150, 105, 0.3),
+    rgba(4, 120, 87, 0.3)
+  );
+  background-size: 200% 100%;
+}
+
+/* Hover effects */
+.flow-node:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 8px 30px rgba(79, 70, 229, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+.flow-node:hover::after {
+  opacity: 0.5;
+  filter: blur(12px);
+}
+
+/* Animations */
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes horizontalFlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .flow-node {
+    width: 120px;
+    padding: 0.8rem;
+  }
+  
+  .flow-paths {
+    gap: 3rem;
+  }
+
+  .flow-branch {
+    gap: 2rem;
+  }
+
+  .flow-start {
+    margin-right: 3rem;
+  }
+
+  .flow-end {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    padding: 60px 0;
+  }
+
+  .flowchart {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .flow-start {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .flow-start::after {
+    right: 50%;
+    top: auto;
+    bottom: -3rem;
+    width: 2px;
+    height: 3rem;
+    transform: translateX(50%);
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(79, 70, 229, 0.4) 50%,
+      transparent 100%
+    );
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+  }
+
+  .flow-end {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+
+  .flow-end::before {
+    left: 50%;
+    top: -3rem;
+    width: 2px;
+    height: 3rem;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(79, 70, 229, 0.4) 50%,
+      transparent 100%
+    );
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+  }
+
+  .flow-paths {
+    gap: 3rem;
+  }
+
+  .flow-branch {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .flow-branch::before {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(79, 70, 229, 0.4) 50%,
+      transparent 100%
+    );
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+  }
+
+  .flow-node {
+    width: 100%;
+    max-width: 160px;
+    margin: 0 auto;
+  }
+
+  .reviews-container::before {
+    top: 50%;
+    right: -50px;
+    transform: translate(0, -50%) rotate(5deg);
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solana-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .solana-logo-1 {
+    top: -20px;
+    left: -50px;
+  }
+
+  .solana-logo-2 {
+    bottom: -200px;
+    right: -50px;
+  }
+
+  .reviews-container::before {
+    top: 50%;
+    right: -30px;
+    transform: translate(0, -50%) rotate(5deg);
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.solana-logo {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.solana-logo-1 {
+  top: -50px;
+  left: -100px;
+  transform: rotate(-15deg);
+}
+
+.solana-logo-2 {
+  bottom: -50px;
+  right: -100px;
+  transform: rotate(15deg);
+}
+
+@media (max-width: 768px) {
+  .solana-logo {
+    width: 300px;
+    height: 300px;
+  }
+
+  .solana-logo-1 {
+    top: -30px;
+    left: -80px;
+  }
+
+  .solana-logo-2 {
+    bottom: -150px;
+    right: -80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solana-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .solana-logo-1 {
+    top: -20px;
+    left: -50px;
+  }
+
+  .solana-logo-2 {
+    bottom: -200px;
+    right: -50px;
+  }
+} 
