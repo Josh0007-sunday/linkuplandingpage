@@ -227,7 +227,7 @@ function App() {
       <div className="py-12 bg-black/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-['Share_Tech']">Trusted Partners</h2>
+            <h2 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-['Share_Tech']">Trusted Infrastructure</h2>
           </div>
           <div className="partners-container">
             <div className="partners-track">
