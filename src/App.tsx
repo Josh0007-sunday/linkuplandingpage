@@ -233,7 +233,7 @@ function App() {
             <div className="partners-track">
               {/* First set of logos */}
               <img 
-                src="/src/assets/img/amidarh.png" 
+                src={Amidarh} 
                 alt="Amidarh" 
                 className="partner-logo h-12 md:h-16 object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
@@ -264,7 +264,7 @@ function App() {
                 className="partner-logo h-12 md:h-16 object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
               <img 
-                src="/src/assets/img/catoff.png" 
+                src={CatOff}  
                 alt="CatOff" 
                 className="partner-logo h-12 md:h-16 object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
