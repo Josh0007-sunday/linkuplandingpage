@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { FaRobot, FaMagic, FaChartLine, FaUser, FaFileAlt, FaHandshake, FaCoins, FaStar, FaNetworkWired } from 'react-icons/fa'
+import Amidarh from './assets/img/amidarh.png'
+import CatOff from './assets/img/catoff.png'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -236,7 +238,7 @@ function App() {
                 className="partner-logo h-12 md:h-16 object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
               <img 
-                src="/src/assets/img/catoff.png" 
+                src={CatOff} 
                 alt="CatOff" 
                 className="partner-logo h-12 md:h-16 object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
@@ -257,7 +259,7 @@ function App() {
               />
               {/* Duplicate set for seamless loop */}
               <img 
-                src="/src/assets/img/amidarh.png" 
+                src={Amidarh} 
                 alt="Amidarh" 
                 className="partner-logo h-12 md:h-16 object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
